@@ -1,1 +1,1 @@
-# mosaic-admin-panel
+# admin-panel-storybook
