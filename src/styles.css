@@ -1,0 +1,9 @@
+body {
+    font-family: "SofiaPro", sans-serif
+}
+
+table,th,td{
+    border-collapse: collapse;
+    text-align: 'left';
+    border: '1px solid';
+}
