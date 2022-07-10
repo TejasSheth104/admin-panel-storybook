@@ -6,6 +6,7 @@ import {
   PDPCarousel_SwitchTextStyled,
   SectionTemplateTextStyled,
   InputLabelTextStyled,
+  ErrorReasonText,
 } from '../../styled-components/text_styled';
 export interface Props {
   error: string;
@@ -20,6 +21,7 @@ const ErrorMessageComponent = ({
   return (
       
 	<EM_container>
+		<div style={{display:'flex', flexDirection: 'row'}}>
 		<EM_icon_exclamation>        
 			<ErrorOutlineOutlinedIcon />
 	 	</EM_icon_exclamation>     
@@ -28,17 +30,15 @@ const ErrorMessageComponent = ({
 	          	children={error}
 	          	StyledComponentStyle={PDPCarousel_SwitchTextStyled}
 	        	/>
-			<EM_reason_text_div>
-	          	<TextComponent
-	        	    children={message}
-	       	     	    StyledComponentStyle={InputLabelTextStyled}
-		          />
-			</EM_reason_text_div>
       		</EM_error_text_div>
 		<EM_icon_close>
         		<CloseIcon />
 		</EM_icon_close>
-</EM_container>
+		</div>
+		<EM_reason_text_div>
+	          <TextComponent children={message} StyledComponentStyle={ErrorReasonText}/>
+		</EM_reason_text_div>
+	</EM_container>
  );
 };
 
