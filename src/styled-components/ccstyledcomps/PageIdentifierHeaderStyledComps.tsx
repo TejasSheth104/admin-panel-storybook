@@ -23,7 +23,6 @@ export const PIH_SectionTemplateBtn = styled.div`
 `
 
 export const PIH_user_login_div  = styled.div`
-border:1px solid green;
 display:flex;
 flex-direction:row;
 align-items:center;
