@@ -53,6 +53,11 @@ export const PDPCarousel_SwitchTextStyled = styled.div`
   color: #030303;
 `;
 
+export const ErrorReasonText = styled.p`
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+`;
 export const SectionTemplateTextStyled = styled.div`
   font-family: 'Sofia Pro';
   font-style: normal;
