@@ -5,6 +5,7 @@ import PageIdentifierHeaderComponent from "../compound components/PageIdentifier
 import PageListSubheaderComponent from "../compound components/PageListSubHeaderComponent";
 // import TableHeadingComponent from "../compound components/TableHeadingComponent";
 import FilterListIcon from '@mui/icons-material/FilterList';
+import { PLS_container, PLS_table_container, PLS_table_div, PLS_table, PLS_subheader, PLS_th, PLS_td } from "../../styled-components/screensstyledcomponents/PageListScreenStyledComps";
 
 export interface Props {
     username: string;
@@ -48,7 +49,7 @@ const PageListScreenComponent = ({
     lastEdited_col,
 }:Props ) => {
     return (
-        <div style={{display: 'flex', flexDirection: 'column',  backgroundColor: '#F9FAFB', height:'auto', width: '100%'}}>
+		<PLS_container>
             <PageIdentifierHeaderComponent 
                 username={username}
                 fullHeader={fullHeader}
@@ -62,51 +63,51 @@ const PageListScreenComponent = ({
                 pageName_col={pageName_col}
                 lastEdited_col={lastEdited_col}
             />
-            <div style={{display: 'flex', flexDirection:'column', alignItems: 'center', justifyContent: 'center'}}>
-                <div style={{display: 'flex', width: '96%', alignItems: 'center', marginTop: '30px'}}>
+		<PLS_table_container>
+		<PLS_subheader>
                     <PageListSubheaderComponent btn_newPage={btn_newPage} btn_filters={btn_filters} />
-                </div>
-                <div style={{width: '96%', marginTop: '30px', display: 'flex'}}>
-                <table  style={{width: '100%', border: '1px solid', borderRadius: '3px'}}>
-                    <tr>
-                    <th style={{width: '20%'}}><Button StyledComponentStyle={TableHeadBtnStyled} children={environment} Icon={FilterListIcon} alignIcon="right" /></th>
-                    <th style={{width: '20%'}}><Button StyledComponentStyle={TableHeadBtnStyled} children={brand} Icon={FilterListIcon} alignIcon="right" /></th>
-                    <th style={{width: '20%'}}><Button StyledComponentStyle={TableHeadBtnStyled} children={pageType} Icon={FilterListIcon} alignIcon="right" /></th>
-                    <th style={{width: '20%'}}><Button StyledComponentStyle={TableHeadBtnStyled} children={pageName} Icon={FilterListIcon} alignIcon="right" /></th>
-                    <th style={{width: '20%'}}><Button StyledComponentStyle={TableHeadBtnStyled} children={lastEdited} Icon={FilterListIcon} alignIcon="right" /></th>
+		</PLS_subheader>
+		<PLS_table_div>
+		<PLS_table>	                   
+		 <tr>
+                    <PLS_th><Button StyledComponentStyle={TableHeadBtnStyled} children={environment} Icon={FilterListIcon} alignIcon="right" /></PLS_th>
+                    <PLS_th><Button StyledComponentStyle={TableHeadBtnStyled} children={brand} Icon={FilterListIcon} alignIcon="right" /></PLS_th>
+                    <PLS_th><Button StyledComponentStyle={TableHeadBtnStyled} children={pageType} Icon={FilterListIcon} alignIcon="right" /></PLS_th>
+                    <PLS_th><Button StyledComponentStyle={TableHeadBtnStyled} children={pageName} Icon={FilterListIcon} alignIcon="right" /></PLS_th>
+                    <PLS_th><Button StyledComponentStyle={TableHeadBtnStyled} children={lastEdited} Icon={FilterListIcon} alignIcon="right" /></PLS_th>
                     </tr>
                     <tr>
-                        <td style={{padding: '20px', border: '1px solid'}}>{environment_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{brand_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageType_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageName_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{lastEdited_col}</td>
+                        <PLS_td >{environment_col}</PLS_td>
+                        <PLS_td >{brand_col}</PLS_td>
+                        <PLS_td >{pageType_col}</PLS_td>
+                        <PLS_td >{pageName_col}</PLS_td>
+                        <PLS_td >{lastEdited_col}</PLS_td>
                     </tr>
                     <tr>
-                        <td style={{padding: '20px', border: '1px solid'}}>{environment_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{brand_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageType_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageName_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{lastEdited_col}</td>
+                        <PLS_td >{environment_col}</PLS_td>
+                        <PLS_td >{brand_col}</PLS_td>
+                        <PLS_td >{pageType_col}</PLS_td>
+                        <PLS_td >{pageName_col}</PLS_td>
+                        <PLS_td >{lastEdited_col}</PLS_td>
                     </tr>
                     <tr>
-                        <td style={{padding: '20px', border: '1px solid'}}>{environment_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{brand_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageType_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{pageName_col}</td>
-                        <td style={{padding: '20px', border: '1px solid'}}>{lastEdited_col}</td>
+                        <PLS_td >{environment_col}</PLS_td>
+                        <PLS_td >{brand_col}</PLS_td>
+                        <PLS_td >{pageType_col}</PLS_td>
+                        <PLS_td >{pageName_col}</PLS_td>
+                        <PLS_td >{lastEdited_col}</PLS_td>
                     </tr>
                     <tr>
-                        <td style={{padding: '20px', border: '1px solid'}}></td>
-                        <td style={{padding: '20px', border: '1px solid'}}></td>
-                        <td style={{padding: '20px', border: '1px solid'}}></td>
-                        <td style={{padding: '20px', border: '1px solid'}}></td>
-                        <td style={{padding: '20px', border: '1px solid'}}></td>
+                        <PLS_td ></PLS_td>
+                        <PLS_td ></PLS_td>
+                        <PLS_td ></PLS_td>
+                        <PLS_td ></PLS_td>
+                        <PLS_td ></PLS_td>
                     </tr>
-                </table>
-                </div>
-            </div>
-        </div>
+		</PLS_table>
+		</PLS_table_div>
+		</PLS_table_container>	
+		</PLS_container>
     );
 };
 
