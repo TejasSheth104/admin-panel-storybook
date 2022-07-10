@@ -8,6 +8,8 @@ import InputLabel from '../compound components/InputLabelComponent';
 import RadioLabelComponent from '../compound components/RadioLabelComponent';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { PISC_container, PISC_accordion, PISC_accordion_summary, PISC_section_header_style1, PISC_section_header_style2, PISC_input_labels_container, PISC_accordion_summary_headertext, PISC_input_spacing, PISC_footer, PISC_footer_btn} from '../../styled-components/screensstyledcomponents/PageIdentifierScreenStyledComps';
+
 
 export interface Props {
     username: string;
@@ -55,7 +57,7 @@ const PageIdentifierScreenComponent = ({
 
     return(
 	<>
-        <div style={{minHeight: '86vh', display: 'flex', flexDirection: 'column',  backgroundColor: '#F9FAFB', height:'auto',  width: '100%' }}>
+	<PISC_container>
             <PageIdentifierHeaderComponent 
                 username={username} 
                 fullHeader={fullHeader} 
@@ -77,212 +79,54 @@ const PageIdentifierScreenComponent = ({
                 subtitle_4={subtitle_4}
             />
 
-	<Accordion style={{ padding: '15px', borderRadius: '25px', marginTop: '30px'}}>
-
+	<Accordion style={{padding:'15px', borderRadius: '25px', marginTop: '30px'}}>
 	<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 
-            <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
+	<PISC_section_header_style1>
+		<PISC_section_header_style2>
                     <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children={head_title_1}/>
 		   &nbsp; 
 		    <TextComponent StyledComponentStyle={PDPCarousel_SwitchTextStyled} children={subtitle_1} />
-                </div>
-            </div>
-            
+		</PISC_section_header_style2>            
+         </PISC_section_header_style1>
 
 	</AccordionSummary>
-	    <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children="Section Template: "/>
-                </div>
-                <Button StyledComponentStyle={PDPSwitchTemplateBtnStyled} children="PDP Switch Template"/>
-            </div>
-
+		<PISC_accordion_summary>
+		<PISC_accordion_summary_headertext>                
+    			<TextComponent StyledComponentStyle={SectionTemplateTextStyled} children="Section Template: "/> 
+		</PISC_accordion_summary_headertext>
+		 <Button StyledComponentStyle={PDPSwitchTemplateBtnStyled} children="PDP Switch Template"/>
+		</PISC_accordion_summary>
 	<AccordionDetails>
-
-            <div id="input-labels-container" style={{marginTop:'2vh', width:'98%'}}>
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Label' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Name' fieldNameMuted='Character Limit 25' placeholder='Lorem Ipsum'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='forText' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='url_key' fieldNameMuted='e.g.: ourlittlejoys.com/product/multivitamin-gummies' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <RadioLabelComponent name="one" label="hide_price" options={['Yes', 'No']} />
-                </div>
-            
-            </div>
-	</AccordionDetails>
-
-	</Accordion>
-
 	
-	<Accordion style={{ padding: '15px', borderRadius: '25px', marginTop: '30px'}}>
+		<PISC_input_labels_container>
+        	<PISC_input_spacing>    
+	
+       		   <InputLabel fieldName='Label' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
+		</PISC_input_spacing>
 
-	<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-
-            <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children={head_title_2}/>
-		   &nbsp; 
-		    <TextComponent StyledComponentStyle={PDPCarousel_SwitchTextStyled} children={subtitle_2} />
-                </div>
-            </div>
-            
-
-	</AccordionSummary>
-	    <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children="Section Template"/>
-                </div>
-                <Button StyledComponentStyle={PDPSwitchTemplateBtnStyled} children="PDP Switch Template"/>
-            </div>
-
-	<AccordionDetails>
-
-            <div id="input-labels-container" style={{marginTop:'2vh', width:'98%'}}>
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Label' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Name' fieldNameMuted='Character Limit 25' placeholder='Lorem Ipsum'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='forText' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='url_key' fieldNameMuted='e.g.: ourlittlejoys.com/product/multivitamin-gummies' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <RadioLabelComponent label="hide_price" options={['Yes', 'No']} name='two' />
-                </div>
-            
-            </div>
-	</AccordionDetails>
-
-	</Accordion>
-
-	<Accordion style={{ padding: '15px', borderRadius: '25px', marginTop: '30px'}}>
-
-	<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-
-            <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children={head_title_3}/>
-		   &nbsp; 
-		    <TextComponent StyledComponentStyle={PDPCarousel_SwitchTextStyled} children={subtitle_3} />
-                </div>
-            </div>
-            
-
-	</AccordionSummary>
-	    <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children="Section Template"/>
-                </div>
-                <Button StyledComponentStyle={PDPSwitchTemplateBtnStyled} children="PDP Switch Template"/>
-            </div>
-
-	<AccordionDetails>
-
-            <div id="input-labels-container" style={{marginTop:'2vh', width:'98%'}}>
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Label' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Name' fieldNameMuted='Character Limit 25' placeholder='Lorem Ipsum'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='forText' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='url_key' fieldNameMuted='e.g.: ourlittlejoys.com/product/multivitamin-gummies' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <RadioLabelComponent label="hide_price" options={['Yes', 'No']} name='three' />
-                </div>
-            
-            </div>
+		<PISC_input_spacing>
+                      <InputLabel fieldName='Name' fieldNameMuted='Character Limit 25' placeholder='Lorem Ipsum'/>
+		</PISC_input_spacing>
+		<PISC_input_spacing>
+                      <InputLabel fieldName='forText' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
+		</PISC_input_spacing>
+		<PISC_input_spacing>
+                      <InputLabel fieldName='url_key' fieldNameMuted='e.g.: ourlittlejoys.com/product/multivitamin-gummies' placeholder='Add text'/>
+		</PISC_input_spacing>
+		<PISC_input_spacing>
+                      <RadioLabelComponent name="one" label="hide_price" options={['Yes', 'No']} />
+		</PISC_input_spacing>
+            </PISC_input_labels_container>
 	</AccordionDetails>
 	</Accordion>
-
-
-
-	<Accordion style={{ padding: '15px', borderRadius: '25px', marginTop: '30px'}}>
-
-	<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-
-            <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children={head_title_4}/>
-		   &nbsp; 
-		    <TextComponent StyledComponentStyle={PDPCarousel_SwitchTextStyled} children={subtitle_4} />
-                </div>
-            </div>
-            
-
-	</AccordionSummary>
-	    <div style={{display: 'flex', flexDirection:'row', borderRadius: '10px', backgroundColor: 'white', height: 'auto',  marginTop: '20px' }}>
-                <div style={{display: 'flex', alignItems:'center', marginRight:'3vw'}}>
-                    <TextComponent StyledComponentStyle={SectionTemplateTextStyled} children="Section Template"/>
-                </div>
-                <Button StyledComponentStyle={PDPSwitchTemplateBtnStyled} children="PDP Switch Template"/>
-            </div>
-
-	<AccordionDetails>
-
-            <div id="input-labels-container" style={{marginTop:'2vh', width:'98%'}}>
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Label' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='Name' fieldNameMuted='Character Limit 25' placeholder='Lorem Ipsum'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='forText' fieldNameMuted='Character Limit 25' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <InputLabel fieldName='url_key' fieldNameMuted='e.g.: ourlittlejoys.com/product/multivitamin-gummies' placeholder='Add text'/>
-                </div>
-
-                <div style={{marginTop: '15px'}}>
-                    <RadioLabelComponent label="hide_price" options={['Yes', 'No']} name='four' />
-                </div>
-            
-            </div>
-	</AccordionDetails>
-	</Accordion>
-
-
-        </div>
-
-	<footer style={{display:'flex', justifyContent:'center'}}>
-	<div style={{  justifyContent:'center', bottom: '0px',  width: '97%', paddingTop: '20px', paddingBottom: '20px', boxShadow: 'rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset'}}>
+	</PISC_container>
+	
+	<PISC_footer>
+	<PISC_footer_btn>
 		<Button StyledComponentStyle={SaveBtnStyled} children={btn_save}/>	
-	</div>
-	</footer>
-	
+	</PISC_footer_btn>
+	</PISC_footer>
 </>
     )
 }
